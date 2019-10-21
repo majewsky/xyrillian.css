@@ -1,0 +1,9 @@
+@import 'lib.scss';
+@import 'fonts.scss';
+@import 'base.scss';
+
+main {
+  @extend %typography-container;
+  max-width: 800px;
+  --highlight-color: #666;
+}

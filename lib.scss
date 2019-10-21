@@ -1,0 +1,55 @@
+//Include this mixin in other files to signal that they require this file.
+@mixin requires-module-lib {}
+
+////////////////////////////////////////////////////////////////////////////////
+// unstyled-marker
+
+@mixin is-unstyled {
+  // Ensures that we don't forget to apply styles to these elements.
+  outline: 1px dashed red;
+}
+
+@mixin is-styled {
+  outline: initial;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// layout strategies for display:block and display:inline-block elements
+
+@mixin is-stack($gap) {
+  // Arranges for all children to be separated by the same distance, `$gap`, in
+  // such a way that children can also use the same layout (with a different
+  // gap) inside them.
+  //
+  // Source: <https://every-layout.dev/layouts/stack/>
+  //
+  // Special syntax in the next line because of
+  // <https://www.sass-lang.com/documentation/breaking-changes/css-vars>
+
+  & > * {
+    margin: 0;
+    --space: #{$gap};
+  }
+  & > * + * {
+    margin-top: var(--space);
+  }
+
+  // By using the --space variable, child elements can easily override the gap
+  // to match their own margins, e.g.:
+  //
+  //     .some-stack > .child-with-exception-above     { --space: 0; }
+  //     .some-stack > .child-with-exception-below + * { --space: 0; }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// design building blocks
+
+@mixin is-card {
+  background: white;
+  box-shadow: 0 0 2px 3px #CCC;
+  padding: 0.5rem;
+}
+
+@mixin has-highlight-border {
+  border-left: 5px solid var(--highlight-color);
+}
