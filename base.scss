@@ -26,11 +26,15 @@ html, body {
 
 :root {
   //minimum size in any dimension of a clickable thing
-  --click-target: 1.2rem;
+  --min-click-target: 1.2rem;
+  --max-click-target: 2rem;
   //mobile devices need larger click targets
   @media (max-width: 40rem) {
-    --click-target: 2rem;
+    --min-click-target: 2rem;
   }
+
+  //maximum width of content containers
+  --content-width: 800px;
 
   //color for borders, button backgrounds etc.
   --highlight-color: #00F;
@@ -109,7 +113,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote {
   & > blockquote, & > pre {
     @include is-styled;
     @include is-card;
-    @include has-highlight-border;
+    @include has-highlight(border-left);
   }
 
   & > pre > code {

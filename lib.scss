@@ -50,6 +50,18 @@
   padding: 0.5rem;
 }
 
-@mixin has-highlight-border {
-  border-left: 5px solid var(--highlight-color);
+@mixin has-highlight($border) {
+  #{$border}: 4px solid var(--highlight-color);
+}
+
+//use on :before or :after
+@mixin is-highlight-bottom-border($color) {
+  content: '';
+  display: inline;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: $color;
 }

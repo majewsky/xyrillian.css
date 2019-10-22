@@ -1,9 +1,10 @@
 @import 'lib.scss';
 @import 'fonts.scss';
 @import 'base.scss';
+@import 'nav.scss';
 
 main {
   @extend %typography-container;
-  max-width: 800px;
+  max-width: var(--content-width);
   --highlight-color: #666;
 }

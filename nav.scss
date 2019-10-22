@@ -1,0 +1,39 @@
+//dependencies of this module
+@include requires-module-lib;
+@include requires-module-base;
+
+body > nav:first-child {
+  @include is-card;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: var(--max-click-target);
+
+  display: flex;
+  justify-content: flex-start;
+  --highlight-color: #666;
+
+  & > a.nav-item {
+    --link-color: black;
+    display: block;
+    white-space: nowrap;
+    flex: 0;
+    padding: 0.5rem 0.25rem;
+    height: 2rem;
+    line-height: 1rem;
+    position: relative;
+
+    &:before {
+      @include is-highlight-bottom-border(var(--highlight-color));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &.nav-item-current:before {
+      opacity: 1 !important;
+    }
+    &:active, &:hover, &:focus {
+      &:before {
+        opacity: 0.25;
+      }
+    }
+  }
+}
