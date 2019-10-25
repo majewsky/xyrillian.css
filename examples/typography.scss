@@ -4,7 +4,6 @@
 @import 'nav.scss';
 
 main {
-  @extend %typography-container;
   max-width: var(--content-width);
   --highlight-color: #666;
 }

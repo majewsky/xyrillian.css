@@ -1,4 +1,4 @@
-all: $(patsubst examples/%/style.scss,examples/%/compiled.css,$(wildcard examples/*/style.scss))
+all: $(patsubst examples/%.scss,examples/%.css,$(wildcard examples/*.scss))
 
-examples/%/compiled.css: examples/%/style.scss *.scss
+examples/%.css: examples/%.scss *.scss
 	sassc -t compressed -I . $< $@

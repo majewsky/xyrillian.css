@@ -57,12 +57,13 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote {
   padding: 0;
 }
 
-%typography-container {
-  // For long-form content, this placeholder-selector applies a serif font and
-  // meaningful styles to paragraphs, headings, lists etc.
+.contains-body-text {
+  // Applies meaningful styles to paragraphs, headings, lists etc. directly
+  // below this element. Most useful with <main>, <article>, <section> etc.
+  // Can be extended with class="serif".
   //
-  // These styles should not be applied to containers that @include is-card
-  // since some children are cards themselves.
+  // These elements should never @include is-card since some children are cards
+  // themselves.
 
   @include is-stack(0.5rem);
   padding: 0.5rem;
@@ -72,10 +73,17 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote {
     margin-right: 0.5rem;
   }
 
+  &.serif {
+    &, & > blockquote {
+      & > p, & > ul, & > ol, & > ul > li, & > ol > li {
+        font-family: "Source Serif Pro", serif;
+      }
+    }
+  }
+
   &, & > blockquote {
     & > p, & > ul, & > ol, & > ul > li, & > ol > li {
       @include is-styled;
-      font-family: "Source Serif Pro", serif;
       line-height: 1.3;
       text-rendering: optimizeLegibility;
       font-variant-ligatures: common-ligatures;
