@@ -54,7 +54,7 @@ html {
   background: #DDD;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote {
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, code, blockquote {
   @include is-unstyled;
   margin: 0;
   padding: 0;
@@ -87,20 +87,32 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote {
   &, & > blockquote {
     & > p, & > ul, & > ol, & > ul > li, & > ol > li {
       @include is-styled;
-      line-height: 1.3;
-      text-rendering: optimizeLegibility;
-      font-variant-ligatures: common-ligatures;
-      font-kerning: normal;
     }
 
     & > p, & > ul > li, & > ol > li {
+      line-height: 1.3;
+
+      text-rendering: optimizeLegibility;
+      font-variant-ligatures: common-ligatures;
+      font-kerning: normal;
+
       hyphens: auto;
       -ms-hyphens: auto;
       -webkit-hyphens: auto;
+
       text-align: justify;
 
       & > * {
         text-align: left;
+      }
+
+      & > code {
+        @include is-styled;
+        padding: 0.2em 0.4em;
+        font-size: 85%;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 3px;
+        white-space: nowrap;
       }
     }
 
@@ -125,6 +137,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote {
     @include is-styled;
     @include is-card;
     @include has-highlight(border-left);
+  }
+
+  & > pre {
+    font-size: 85%;
   }
 
   & > pre > code {
