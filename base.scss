@@ -21,16 +21,19 @@ html, body {
   padding: 0;
 }
 
+main, article, section {
+  max-width: var(--content-width);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // global variables
 
 :root {
   //minimum size in any dimension of a clickable thing
-  --min-click-target: 1.2rem;
-  --max-click-target: 2rem;
+  --click-target: 1.2rem;
   //mobile devices need larger click targets
   @media (max-width: 40rem) {
-    --min-click-target: 2rem;
+    --click-target: 2rem;
   }
 
   //maximum width of content containers
@@ -129,10 +132,28 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote {
   }
 }
 
-a {
+////////////////////////////////////////////////////////////////////////////////
+// buttons
+
+a:not(.button) {
   text-decoration: none;
 
   &, &:visited, &:hover, &:focus, &:active {
     color: var(--link-color);
+  }
+}
+
+a.button, button {
+  display: inline-block;
+  background: var(--highlight-color);
+  color: white;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 1px #CCC;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+
+  &:hover, &:active, &:focus {
+    box-shadow: 0 2px 3px #888;
   }
 }

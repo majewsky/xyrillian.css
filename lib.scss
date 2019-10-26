@@ -23,7 +23,7 @@
   //
   // Source: <https://every-layout.dev/layouts/stack/>
   //
-  // Special syntax in the next line because of
+  // Special syntax for usage of $gap because of
   // <https://www.sass-lang.com/documentation/breaking-changes/css-vars>
 
   & > * {
@@ -41,6 +41,22 @@
   //     .some-stack > .child-with-exception-below + * { --space: 0; }
 }
 
+@mixin is-column($gap) {
+  //Like is-stack, but arranges children in a row instead of in a column.
+
+  display: flex;
+  justify-content: flex-start;
+
+  & > * {
+    flex: 0;
+    display: block;
+  }
+  & > * + * {
+    margin-left: $gap;
+  }
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // design building blocks
 
@@ -52,16 +68,4 @@
 
 @mixin has-highlight($border) {
   #{$border}: 4px solid var(--highlight-color);
-}
-
-//use on :before or :after
-@mixin is-highlight-bottom-border($color) {
-  content: '';
-  display: inline;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 4px;
-  background: $color;
 }

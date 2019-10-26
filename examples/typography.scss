@@ -3,7 +3,11 @@
 @import 'base.scss';
 @import 'nav.scss';
 
+nav#nav > #nav-bar > * > img {
+  width: 48px;
+  height: 48px;
+}
+
 main {
-  max-width: var(--content-width);
   --highlight-color: #666;
 }
