@@ -1,0 +1,11 @@
+//Include this mixin in other files to signal that they require this file.
+@mixin requires-module-forms {}
+
+//dependencies of this module
+@include requires-module-lib;
+@include requires-module-base;
+
+form {
+  @include is-styled;
+  max-width: var(--content-width);
+}

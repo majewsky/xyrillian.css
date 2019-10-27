@@ -206,6 +206,7 @@
 }
 
 body > nav#nav {
+  @include is-styled;
   @include is-card;
   margin-top: 0;
   padding: 0;

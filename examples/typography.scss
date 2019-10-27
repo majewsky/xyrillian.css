@@ -2,6 +2,7 @@
 @import 'fonts.scss';
 @import 'base.scss';
 @import 'nav.scss';
+@import 'buttons.scss';
 
 nav#nav > #nav-bar > * > img {
   width: 48px;
@@ -9,5 +10,5 @@ nav#nav > #nav-bar > * > img {
 }
 
 main {
-  --highlight-color: #666;
+  --highlight-color: #{$color-secondary};
 }
