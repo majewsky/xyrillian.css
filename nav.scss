@@ -1,3 +1,6 @@
+//Include this mixin in other files to signal that they require this file.
+@mixin requires-module-nav {}
+
 //dependencies of this module
 @include requires-module-lib;
 @include requires-module-base;
@@ -163,7 +166,7 @@
         margin-right: auto;
 
         & > .nav-item {
-          padding-left: var(--horiz-padding);
+          padding-left: 1rem;
 
           &:after {
             left: 0;
@@ -173,7 +176,7 @@
 
       &#nav-right {
         & > .nav-item {
-          padding-right: var(--horiz-padding);
+          padding-right: 1rem;
 
           &:after {
             right: 0;
@@ -204,6 +207,7 @@
 
 body > nav#nav {
   @include is-card;
+  margin-top: 0;
   padding: 0;
   //match main-matter padding of 1rem, but take into account the nav-item
   //padding of 0.25rem
