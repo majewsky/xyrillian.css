@@ -8,6 +8,51 @@
 </head>
 <body>
   <form method="GET">
+    <div class="form-row">
+      <label for="id">Object ID</label>
+      <input type="text" id="id" readonly value="foobar" />
+    </div>
+    <div class="form-row item-list">
+      <label>Read-only list of options</label>
+      <input type="checkbox" id="roptions-1" value="first" readonly />
+      <label>First thing</label>
+      <input type="checkbox" id="roptions-2" value="second" checked readonly />
+      <label>Second thing</label>
+      <input type="checkbox" id="roptions-3" value="third" checked readonly />
+      <label>Third thing</label>
+    </div>
+    <fieldset>
+      <label>Fieldset (non-collapsible)</label>
+      <div class="form-row">
+        <label for="field1">First field</label>
+        <input type="number" name="field1" value="42" />
+      </div>
+      <div class="form-row item-list">
+        <label>Editable list of options</label>
+        <input type="checkbox" name="options" id="options-1" value="first" />
+        <label for="options-1">First thing</label>
+        <input type="checkbox" name="options" id="options-2" value="second" checked />
+        <label for="options-2">Second thing</label>
+        <input type="checkbox" name="options" id="options-3" value="third" checked />
+        <label for="options-3">Third thing</label>
+      </div>
+      <div class="form-row">
+        <label for="field2">Second field <span class="form-error">is missing</span></label>
+        <input type="text" name="field2" class="form-error" />
+      </div>
+    </fieldset>
+    <input type="checkbox" id="collapsed" class="for-fieldset" checked />
+    <fieldset>
+      <label for="collapsed">Fieldset (collapsible)</label>
+      <div class="form-row">
+        <label for="password1">Password</label>
+        <input type="password" name="password1" />
+      </div>
+      <div class="form-row">
+        <label for="password2">Repeat password</label>
+        <input type="password" name="password2" />
+      </div>
+    </fieldset>
     <div class="button-row">
       <button type="button" class="button button-primary">Default</button>
       <button type="button" class="button button-secondary">Secondary</button>
