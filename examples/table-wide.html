@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wide table</title>
+    <link rel="stylesheet" type="text/css" href="table.css" />
+</head>
+<body>
+  <nav id="nav">
+    <div id="nav-bar">
+      <div id="nav-title">
+        <img src="logo-square.svg" alt="Site logo">
+      </div>
+      <a id="nav-fold" href="#">
+        <img src="logo-square.svg" alt="Site logo">
+        <span>Close menu</span>
+      </a>
+      <a id="nav-unfold" href="#nav">
+        <img src="logo-square.svg" alt="Site logo">
+        <span>Wide table</span>
+      </a>
+      <div class="nav-area" id="nav-left">
+        <a class="nav-item nav-item-current" href="table-wide.html"><span>Wide table</span></a>
+        <a class="nav-item" href="table-narrow.html"><span>Narrow table</span></a>
+      </div>
+      <div class="nav-area" id="nav-right"></div>
+    </div>
+  </nav>
+  <div class="table-container">
+    <table class="table responsive">
+      <thead>
+        <tr>
+          <th>Object ID</th>
+          <th>Parent</th>
+          <th>Dummy text</th>
+          <th class="actions"><a href="#">New object</button></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Object ID">first</td>
+          <td data-label="Parent" class="text-muted">None</td>
+          <td data-label="Dummy text"><p>Officiis doloribus sed tempore dolor consequatur qui quis et odio corporis nobis ut ut est laboriosam praesentium minus eos sint.</p></td>
+          <td class="actions"><a href="#">Edit</a><span class="action-separator"> · </span><a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td data-label="Object ID">second</td>
+          <td data-label="Parent">first</td>
+          <td data-label="Dummy text"><p>Minima placeat ratione facere earum laborum. Et assumenda eum earum. Ex est est dicta nesciunt. Totam porro voluptatibus quaerat aliquam.</p></td>
+          <td class="actions"><a href="#">Edit</a><span class="action-separator"> · </span><a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td data-label="Object ID">final</td>
+          <td data-label="Parent">second</td>
+          <td data-label="Dummy text">
+            <p>Dolores quis id accusamus sunt recusandae libero possimus non. Qui odit adipisci aliquid. Dolores culpa quisquam sunt dolorum quaerat quos. Odio earum et neque quaerat sint inventore qui.</p>
+            <p>Repudiandae ipsa molestiae et cupiditate soluta. Dolorem unde illo dolorum blanditiis molestiae. Est quasi dolor natus modi. Aspernatur vitae quia deserunt et sit quis.</p>
+            <p>Veritatis et voluptatum sed commodi ullam mollitia at sed. Architecto consectetur et et atque necessitatibus quis natus cum. Eligendi fuga eos est.</p>
+            <p>Explicabo officiis aperiam ut cum nulla. Numquam et deleniti et veritatis qui. Id ipsa sunt ipsam ea voluptas. Odio aut et neque perferendis explicabo animi laudantium dolores. Voluptatem in pariatur qui dolorem veniam non in.</p>
+            </p>
+          </td>
+          <td class="actions"><a href="#">Edit</a><span class="action-separator"> · </span><a href="#">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -10,6 +10,7 @@
 //very bottom.
 
 @mixin navbar-link-base {
+  white-space: nowrap;
   //base for a highlight border that appears on selected and active nav links
   position: relative;
 
@@ -142,6 +143,7 @@
         display: none;
       }
 
+      // TODO: replace <div class="breadcrumb-arrow"> usage here by CSS classes indicating padding (to support multiple items on the same indentation level)
       & > .breadcrumb-arrow + .nav-item {
         &:before {
           content: '>';

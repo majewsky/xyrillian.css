@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Narrow table</title>
+    <link rel="stylesheet" type="text/css" href="table.css" />
+</head>
+<body>
+  <nav id="nav">
+    <div id="nav-bar">
+      <div id="nav-title">
+        <img src="logo-square.svg" alt="Site logo">
+      </div>
+      <a id="nav-fold" href="#">
+        <img src="logo-square.svg" alt="Site logo">
+        <span>Close menu</span>
+      </a>
+      <a id="nav-unfold" href="#nav">
+        <img src="logo-square.svg" alt="Site logo">
+        <span>Narrow table</span>
+      </a>
+      <div class="nav-area" id="nav-left">
+        <a class="nav-item" href="table-wide.html"><span>Wide table</span></a>
+        <a class="nav-item nav-item-current" href="table-narrow.html"><span>Narrow table</span></a>
+      </div>
+      <div class="nav-area" id="nav-right"></div>
+    </div>
+  </nav>
+  <div class="table-container narrow">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Object ID</th>
+          <th>Parent</th>
+          <th class="actions"><a href="#">New object</button></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>first</td>
+          <td class="text-muted">None</td>
+          <td class="actions"><a href="#">Edit</a> · <a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td>second</td>
+          <td>first</td>
+          <td class="actions"><a href="#">Edit</a> · <a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td>final</td>
+          <td>second</td>
+          <td class="actions"><a href="#">Edit</a> · <a href="#">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

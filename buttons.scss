@@ -7,7 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-a.button, button {
+@mixin is-button {
   display: inline-block;
   background: var(--highlight-color);
   color: white;
@@ -25,6 +25,10 @@ a.button, button {
   }
 }
 
+a.button, button {
+  @include is-button;
+}
+
 button {
   border: 0;
 }
@@ -36,5 +40,13 @@ button {
 .button-danger    { --highlight-color: #{$color-danger};    }
 
 div.button-row {
-  line-height: calc(var(--button-height) + 0.3rem);
+  //margin between lines if the div.button-row overflows the line, will be
+  //compensated below
+  & > * {
+    margin-bottom: 0.25rem;
+  }
+
+  & + * {
+    --space: 0.25rem; //down from 0.5rem
+  }
 }

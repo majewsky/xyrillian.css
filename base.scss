@@ -42,7 +42,7 @@ main, article, section {
   --content-width: 800px;
 
   //color for borders, button backgrounds etc.
-  --highlight-color: $color-primary;
+  --highlight-color: #{$color-primary};
   //color for links
   --link-color: #00F;
 }
@@ -58,6 +58,12 @@ html {
   background: #{$color-page-bg};
 }
 
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, code, blockquote {
+  @include is-unstyled;
+  margin: 0;
+  padding: 0;
+}
+
 body > * {
   @include is-unstyled;
   //<body> does not use is-stack(0.5rem) because is-stack has problems when its
@@ -65,14 +71,16 @@ body > * {
   //elements, at the cost of flexibility.
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, code, blockquote {
-  @include is-unstyled;
-  margin: 0;
-  padding: 0;
+  &:not(table) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+body > table {
+  //<table> does not support the padding property, so use a margin instead here.
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .contains-body-text {
@@ -161,6 +169,17 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, code, blockquote {
   & > pre > code {
     @include is-styled;
   }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// styles for inline text
+
+.small {
+  font-size: 0.8em;
+}
+
+.text-muted {
+  color: gray;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
