@@ -17,6 +17,16 @@
   padding: 0;
 }
 
+@mixin is-form-input {
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  line-height: var(--button-height);
+  height: var(--button-height);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // principle layout: <form> and <fieldset>
 
@@ -89,18 +99,13 @@ div.form-row {
   }
 
   & > input {
+    @include is-form-input;
     display: block;
     width: 100%;
-    border: 1px solid #AAA;
-    border-radius: 3px;
-    padding: 0 0.5rem;
-    font-size: 1rem;
-    line-height: var(--button-height);
-    height: var(--button-height);
     background: white;
 
     &[readonly] {
-      background: none;
+      background: #{$color-page-bg};
     }
 
     &:hover {
@@ -131,16 +136,11 @@ div.item-list {
     @include is-invisible-checkbox;
 
     & + label {
+      @include is-form-input;
       display: inline-block;
+      background: none;
 
       margin-bottom: 0.25rem; //margin between lines if the div.item-list overflows the line, will be compensated below
-      padding: 0 0.5rem;
-      border: 1px solid #AAA;
-      border-radius: 3px;
-      background: none;
-      font-size: 1rem;
-      line-height: var(--button-height);
-      height: var(--button-height);
 
       &:before {
         color: inherit;

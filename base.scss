@@ -55,7 +55,7 @@ html {
   --serif-font-stack: "Source Serif Pro", serif;
   font-family: var(--sans-serif-font-stack);
   font-size: 18px; /* is 1rem */
-  background: #DDD;
+  background: #{$color-page-bg};
 }
 
 body > * {
