@@ -9,8 +9,12 @@
 //before including them. The actual definition for `body > nav#nav` is at the
 //very bottom.
 
-@mixin navbar-link-base {
+@mixin navbar-item-base {
   white-space: nowrap;
+}
+
+@mixin navbar-link-base {
+  @include navbar-item-base;
   //base for a highlight border that appears on selected and active nav links
   position: relative;
 
@@ -29,6 +33,14 @@
     &:after {
       opacity: 0.25;
     }
+  }
+}
+
+@mixin has-navbar-breadcrumb-marker($padding) {
+  &:before {
+    content: '>';
+    display: inline;
+    padding: 0 0.25rem 0 #{$padding};
   }
 }
 
@@ -121,12 +133,22 @@
     & > .nav-area {
       display: none; //until unfolded (see below)
 
-      & > .nav-item {
-        @include navbar-link-base;
+      & > * {
+        @include navbar-item-base;
         display: block;
         padding: 0;
         height: var(--click-target);
         line-height: var(--click-target);
+
+        &.nav-level-1 { @include has-navbar-breadcrumb-marker(0.5rem); }
+        &.nav-level-2 { @include has-navbar-breadcrumb-marker(1.0rem); }
+        &.nav-level-3 { @include has-navbar-breadcrumb-marker(1.5rem); }
+        &.nav-level-4 { @include has-navbar-breadcrumb-marker(2.0rem); }
+        &.nav-level-5 { @include has-navbar-breadcrumb-marker(2.5rem); }
+      }
+
+      & > a.nav-item {
+        @include navbar-link-base;
 
         &:after {
           top: 0;
@@ -141,27 +163,6 @@
 
       & > .breadcrumb-arrow {
         display: none;
-      }
-
-      // TODO: replace <div class="breadcrumb-arrow"> usage here by CSS classes indicating padding (to support multiple items on the same indentation level)
-      & > .breadcrumb-arrow + .nav-item {
-        &:before {
-          content: '>';
-          display: inline;
-          padding: 0 0.25rem 0 0.5rem;
-        }
-        & + .breadcrumb-arrow + .nav-item {
-          &:before { padding-left: 1.0rem; }
-          & + .breadcrumb-arrow + .nav-item {
-            &:before { padding-left: 1.5rem; }
-            & + .breadcrumb-arrow + .nav-item {
-              &:before { padding-left: 2.0rem; }
-              & + .breadcrumb-arrow + .nav-item {
-                &:before { padding-left: 2.5rem; }
-              }
-            }
-          }
-        }
       }
 
       &#nav-left {
