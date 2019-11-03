@@ -45,6 +45,14 @@
     <fieldset>
       <label for="collapsed">Fieldset (collapsible)</label>
       <div class="form-row">
+        <label for="pwstorage">Password storage</label>
+        <select required name="pwstorage">
+          <option value="" selected>-- Please select --</option>
+          <option value="plain">Plain text</option>
+          <option value="hashed">Hashed</option>
+        </select>
+      </div>
+      <div class="form-row">
         <label for="password1">Password</label>
         <input type="password" name="password1" />
       </div>

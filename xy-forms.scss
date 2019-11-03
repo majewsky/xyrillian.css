@@ -98,11 +98,12 @@ div.form-row {
     }
   }
 
-  & > input {
+  & > input, & > select {
     @include is-form-input;
     display: block;
     width: 100%;
     background: white;
+    font-family: inherit;
 
     &[readonly] {
       background: #{$color-page-bg};
