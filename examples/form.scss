@@ -4,3 +4,7 @@
 @import 'xy-buttons.scss';
 @import 'xy-forms.scss';
 @import 'xy-flashes.scss';
+
+form > p {
+  @include is-styled;
+}
