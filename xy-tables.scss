@@ -101,7 +101,10 @@
         &.actions {
           & > a {
             @include is-button;
+            margin-bottom: 0.25rem; //add margin between lines when the column contents break into multiple lines, will be compensated on td.actions below
           }
+          margin-bottom: -0.25rem; //compensate margin-bottom on & > a
+
           & > span.action-separator {
             display: inline-block;
             color: transparent;
