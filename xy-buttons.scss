@@ -55,8 +55,7 @@ div.button-row {
   & > * {
     margin-bottom: 0.25rem;
   }
-
   & + * {
-    --space: 0.25rem; //down from 0.5rem
+    --less-space: 0.25rem;
   }
 }

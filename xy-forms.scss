@@ -165,6 +165,6 @@ div.item-list {
 
   //compensate for the bottom margin of div.item-list + label
   & + * {
-    --space: 0.25rem; //down from 0.5rem
+    --less-space: 0.25rem;
   }
 }

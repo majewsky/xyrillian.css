@@ -35,20 +35,21 @@ $color-danger:    #D00;
   //
   // Special syntax for usage of $gap because of
   // <https://www.sass-lang.com/documentation/breaking-changes/css-vars>
+  --more-space: 0px;
+  --less-space: 0px;
 
   & > * {
     margin: 0;
-    --space: #{$gap};
   }
   & > * + * {
-    margin-top: var(--space);
+    margin-top: calc(#{$gap} + var(--more-space) - var(--less-space));
   }
 
-  // By using the --space variable, child elements can easily override the gap
-  // to match their own margins, e.g.:
+  // By using the --more-space/--less-space variables, child elements can
+  // easily override the gap to match their own margins, e.g.:
   //
-  //     .some-stack > .child-with-exception-above     { --space: 0; }
-  //     .some-stack > .child-with-exception-below + * { --space: 0; }
+  //     .some-stack > .child-with-exception-above     { --less-space: 0.25rem; }
+  //     .some-stack > .child-with-exception-below + * { --more-space: 0.25rem; }
 }
 
 @mixin is-column($gap) {
