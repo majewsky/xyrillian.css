@@ -48,6 +48,10 @@
     }
   }
 
+  &.has-hover-highlight > tbody > tr:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
   &:not(:last-child), .table-container:not(:last-child) > & {
     & > tbody > tr:last-child {
       border-bottom: none;
